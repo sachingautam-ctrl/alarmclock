@@ -1,12 +1,12 @@
 import React from 'react'
 import Modal from 'react-modal'
 import alarmSound from '../../chime-notification.wav'
+import {timeFormatString,Dismiss} from '../../constants'
+
 
 const AlarmModal = ({ isOpen, setModalState, alarmName, alarmTime }) => {
 
-    console.log('inside the modal alarmTime :>> ', alarmTime, isOpen);
     const audio = new Audio(alarmSound)
-    // audio.loop = true
     function closeModal() {
         audio.muted = true;
         audio.loop = false
@@ -33,13 +33,10 @@ const AlarmModal = ({ isOpen, setModalState, alarmName, alarmTime }) => {
                 onRequestClose={closeModal}
                 style={customStyles}
             >
-                {/* <h2> {alarmName} {alarmTime} </h2> */}
                 <h1> {alarmName}</h1>
-                <h2>{alarmTime.format('HH:mm:ss')}</h2>
-                <button style={{color: "red"}} onClick={closeModal}>Dismiss</button>
+                <h2>{alarmTime.format(timeFormatString)}</h2>
+                <button style={{color: "red"}} onClick={closeModal}>{Dismiss}</button>
             </Modal>
-
-
         </div>
     );
 }
