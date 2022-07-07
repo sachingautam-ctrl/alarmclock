@@ -1,6 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal'
-import alarmSound from '../../chime-notification.wav'
+import alarmSound from '../../resources/chime-notification.wav'
 import {timeFormatString,Dismiss} from '../../constants'
 
 
