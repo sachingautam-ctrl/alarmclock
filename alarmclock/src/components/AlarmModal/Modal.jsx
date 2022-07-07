@@ -4,6 +4,7 @@ import alarmSound from '../../chime-notification.wav'
 import {timeFormatString,Dismiss} from '../../constants'
 
 
+// this is the alarm modal to the visual cue //
 const AlarmModal = ({ isOpen, setModalState, alarmName, alarmTime }) => {
 
     const audio = new Audio(alarmSound)
@@ -24,6 +25,7 @@ const AlarmModal = ({ isOpen, setModalState, alarmName, alarmTime }) => {
         },
     };
 
+    // when modal is open alarm starts to play //
     if (isOpen) audio.play()
 
     return (

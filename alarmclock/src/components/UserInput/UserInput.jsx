@@ -13,6 +13,7 @@ const UserInput = () => {
     const [alarmList, updateAlarmList] = useState([])
     const listItems = alarmList.length > 0 && alarmList.map((d) => <li key={d.name}> {d.name} Time : {d.time.format('HH:mm:ss')} </li>)
 
+    // create the alarm after given ms //
     const createAlarm = (ms, alarmName) => {
         setTimeout(() => {
             setAlarmName(alarmName)
@@ -69,6 +70,7 @@ const UserInput = () => {
                 <h4>{AvailableAlarms}</h4>
             </div>
 
+            {/* list of all the alarms added */}
             <div className='alarm-list'>
                 {listItems}
             </div>
